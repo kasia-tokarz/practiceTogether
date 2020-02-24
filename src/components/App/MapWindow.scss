@@ -1,0 +1,51 @@
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 500px;
+    background-color: white;
+        
+    
+    #wrapperMap {
+        display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    height: 550px;
+    width: 80%;
+    background-color: #B6C6D1;
+    border-radius: 10px;
+    box-shadow: grey;
+    margin: 50px auto;
+    padding: 40px 0;
+        
+            #map {
+                display: flex;
+                height: 450px;
+                width: 60%;
+                background-color: #B6C6D1;
+
+                #mapContent {
+                    box-shadow: 0 0 5px grey;
+                }
+                
+               
+            }
+        
+            #mapList {
+                display: flex;
+                height: 450px;
+                width: 30%;
+                background-color: #B6C6D1;
+                ul {
+                    list-style: none;
+                padding-left: 20px;
+
+                }
+                
+        
+        
+            }
+        }
+
+}
