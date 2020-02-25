@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap&subset=latin-ext');
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,800&display=swap&subset=latin-ext');
+
 body {
   font-family: 'Raleway', sans-serif;
 }
@@ -11,7 +12,7 @@ body {
   justify-content: space-between;
   height: 80px;
   width: 100vw;
-  background-color: rgb(75, 73, 69);
+  background-color: rgb(92, 91, 88);
   padding-top: 20px;
   padding-left: 10vw;
   padding-right: 10vw;
@@ -37,15 +38,15 @@ body {
   width: 80vw;
   border-radius: 7px;
   margin: 20px auto;
-  
-  
-  #inputWrapper{
+
+
+  #inputWrapper {
     align-self: center;
     height: 80%;
     width: 50%;
     display: flex;
     justify-content: center;
-    
+
     #detect {
       font-family: inherit;
       align-self: center;
@@ -55,18 +56,123 @@ body {
       display: block;
       font-size: 1.1em;
       padding-left: 2px;
-     
+
 
     }
+
     #inputCode {
       display: flex;
       align-self: center;
       height: 70px;
       width: 400px;
       font-size: 1.1em;
-  
+
     }
-    
+
+  }
+}
+#photoDiv{
+  
+  background-color: white;
+  display: block;
+  text-align: center;
+  width: 100vw;
+  min-height: 236px;
+  div{
+    background-image: url("../icons/Fotoram.io\ \(1\).png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  min-width: 50px;
+  min-height: 236px;
+
   }
 }
 
+#aboutWrapper {
+  height: 300px;
+  width: 80vw;
+  background-color: #B6C6D1;
+  border-radius: 8px;
+  margin: 0 auto;
+  margin-top: 40px;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+
+
+
+
+  div {
+    justify-content: center;
+
+    .aboutDiv {
+      align-self: center;
+      border-radius: 8px;
+      border: 2px solid grey;
+    }
+    
+
+    #first {
+      background-image: url("../icons/couple-jogging-together-vector-id1134616946.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      height: 130px;
+      margin-top: 25px;
+      z-index: 50;
+      font-family: 'Open Sans', sans-serif;
+
+    }
+    p {
+      text-align: center;
+      padding: 22px 14px;
+      
+      font-size: 14px;
+      text-align: center;
+    }
+
+    #second {
+      background-image: url("../icons/team.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      background-color: #B6C6D1;
+      height: 130px;
+      margin-top: 25px;
+      z-index: 50;
+      font-family: 'Raleway', sans-serif;
+
+    }
+    p {
+      text-align: center;
+      padding: 22px 14px;
+      
+      font-size: 14px;
+      text-align: center;
+    }
+
+    #third {
+      background-image: url(../icons/meditation.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      background-color: #B6C6D1;
+      height: 130px;
+      margin-top: 25px;
+      z-index: 50;
+    }
+    p {
+      text-align: center;
+      padding: 22px 14px;
+      
+      font-size: 14px;
+      text-align: center;
+    }
+
+
+  }
+
+}
