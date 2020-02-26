@@ -21,6 +21,7 @@ body {
   font-size: 25px;
   border-bottom: 1px solid rgb(75, 73, 69);
   box-shadow: 0px 3px 6px #00000029;
+  //position: fixed;
 
   .fas {
     color: white;
@@ -34,10 +35,10 @@ body {
   display: flex;
   justify-content: center;
   background-color: #B6C6D1;
-  height: 300px;
+  height: 270px;
   width: 80vw;
   border-radius: 7px;
-  margin: 20px auto;
+  margin: 40px auto;
 
 
   #inputWrapper {
@@ -90,7 +91,7 @@ body {
 }
 
 #aboutWrapper {
-  height: 300px;
+  min-height: 300px;
   width: 80vw;
   background-color: #B6C6D1;
   border-radius: 8px;
@@ -115,12 +116,12 @@ body {
     
 
     #first {
-      background-image: url("../icons/couple-jogging-together-vector-id1134616946.jpg");
+      background-image: url("../icons/diverse-international-group-of-women-or-girl-hugging-together-union-vector-id1154639826-removebg-preview.png");
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
 
-      height: 130px;
+      height: 196px;
       margin-top: 25px;
       z-index: 50;
       font-family: 'Open Sans', sans-serif;
@@ -135,12 +136,12 @@ body {
     }
 
     #second {
-      background-image: url("../icons/team.png");
+      background-image: url("../icons/medytacja-moja.png");
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
       background-color: #B6C6D1;
-      height: 130px;
+      height: 196px;
       margin-top: 25px;
       z-index: 50;
       font-family: 'Raleway', sans-serif;
@@ -155,12 +156,12 @@ body {
     }
 
     #third {
-      background-image: url(../icons/meditation.png);
+      background-image: url("../icons/couple-jogging-together-vector-id1134616946-removebg-preview.png");
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
       background-color: #B6C6D1;
-      height: 130px;
+      height: 196px;
       margin-top: 25px;
       z-index: 50;
     }
@@ -174,5 +175,23 @@ body {
 
 
   }
+
+}
+
+#footer{
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  width: 100vw;
+  background-color: rgb(92, 91, 88);
+  margin-top: 60px;
+  padding-bottom: 20px;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  font-size: 25px;
+  border-top: 1px solid rgb(75, 73, 69);
+  box-shadow: 0px 3px 6px #00000029;
 
 }

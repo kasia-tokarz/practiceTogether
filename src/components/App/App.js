@@ -14,6 +14,7 @@ import HamburgerMenu from './HamburgerMenu';
 const App = () => {
 
     return (
+        <>
         <div id="outer-container">
 
             <div id="header" display="flex">
@@ -61,6 +62,17 @@ const App = () => {
 
 
         </div>
+
+        <div id="footer">
+            <logo>All </logo>
+            <div id="socialMedia">
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            </div>
+
+        </div>
+    </>
     );
 };
 
