@@ -1,91 +1,79 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import GoogleMapReact from 'google-map-react';
-import Marker from 'google-map-react';
 
-const AnyReactComponent = ({ text, onSelect }) => <i style={{ fontSize: '35px', color: 'darkred' }} onClick={onSelect} className="fa fa-map-marker"></i>;
+import { WorkoutService } from './WorkoutService';
 
-class SimpleMap extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      center: {
-        lat: 59.955413,
-        lng: 30.337844
-      },
-      zoom: 17,
-      markers: []
+const AnyReactComponent = ({ text, onSelect }) => <i style={{ fontSize: '35px', color: 'darkred' }} title={text} onClick={onSelect} className="fa fa-map-marker"></i>;
+
+const SimpleMap = ({location}) => {
+  const [center, setCenter] = useState({
+    lat: 51.1108305,
+    lng: 17.0292442
+  });
+  const [zoom, setZoom] = useState(17)
+  const [markers, setMarkers] = useState([{
+    lat: 51.1108305,
+    lng: 17.0292442,
+    name: 'Coders-Lab Brain Torture'
+  }]);
+  
+  useEffect(() => {
+    const groups = new WorkoutService().getAllGroupes();
+    if (groups){
+      
+      const newMarkers = groups.map(group => {
+        return {
+          lat: group.location.lat,
+          lng: group.location.lng,
+          name: group.groupName
+        }
+      });
+      setMarkers( newMarkers);
     }
-  }
 
-  componentDidMount() {
-    const markers = [
-      {
-        lat: 52.1340517,
-        lng: 17.5202935
-      },
-      {
-        lat: 51.1440517,
-        lng: 17.0302935
-      }
-    ];
-    if (this.props.match.params.latlon) {
-      const lat = parseFloat(this.props.match.params.latlon.split(',')[0]).toFixed(6);
-      const lng = parseFloat(this.props.match.params.latlon.split(',')[1]).toFixed(6);
+    if (location) {
+      const lat = parseFloat(location.lat).toFixed(6);
+      const lng = parseFloat(location.lng).toFixed(6);
 
-      markers[0] = {
+      setCenter({
         lat: lat,
         lng: lng
-      }
-
-      this.setState({
-        center: {
-          lat: lat,
-          lng: lng
-        },
-        markers: markers
-      });
+      })
+      
 
     }
-  }
 
-  showMarker(marker) {
-   
-  }
+  }, [location]);
 
-  render() {
+  return (
+    <div>
+      {
+        center.lat > 0 ? <div style={{ height: 'calc(80vh - 80px)', width: '100%' }}>
+          <GoogleMapReact
+            bootstrapURLKeys={{ key: 'AIzaSyDxhPoHdmvEiL-X4oikMKwW7J0MDALNZbQ' }}
+            defaultCenter={{
+              lat: parseFloat(center.lat),
+              lng: parseFloat(center.lng)
+            }}
 
-    return (
-      <div>
+            defaultZoom={zoom}
+          >
 
-        {
-          this.state.center.lat > 0 ? <div style={{ height: 'calc(100vh - 80px)', width: '50%' }}>
-            <GoogleMapReact
-              bootstrapURLKeys={{ key: 'AIzaSyDxhPoHdmvEiL-X4oikMKwW7J0MDALNZbQ' }}
-              defaultCenter={{
-                lat: parseFloat(this.state.center.lat),
-                lng: parseFloat(this.state.center.lng)
-              }}
+            {markers.map((marker, i) => {
+              const component = <AnyReactComponent key={i} lat={marker.lat} lng={marker.lng} text={marker.name} />
+              return component;
+            })}
 
-              defaultZoom={this.state.zoom}
-            >
-
-              {this.state.markers.map((marker, i) => {
-                const component = <AnyReactComponent key={i} onSelect={this.showMarker(marker)} lat={marker.lat} lng={marker.lng} text="My Marker" />
-                return component;
-              })}
-
-            </GoogleMapReact>
-          </div>
-            : <h1>Ładuję...</h1>
-        }
-      </div>
+          </GoogleMapReact>
+        </div>
+          : <h1>Ładuję...</h1>
+      }
+    </div>
 
 
 
-    );
-  }
+  );
 }
 
+
 export default SimpleMap;
-
-

@@ -1,26 +1,69 @@
 import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
+import { WorkoutService } from './WorkoutService';
+
 import "./Form.scss";
 
-const Form = () => {
+const Form = (props) => {
     const [data, setData] = useState(false);
+
+    const [groupName, setGroupName] = useState('');
     const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
     const [age, setAge] = useState("");
     const [location, setLocation] = useState(true);
     const [experience, setExperience] = useState("beginner");
     const [gender, setGender] = useState("female");
     const [surname, setSurname] = useState("");
-    const [practice, setPractice] = useState("body workout");
+    const [practice, setPractice] = useState("Workout");
 
+    const history = useHistory();
+
+    const validateAndCreate = (ev) => {
+        const lat = parseFloat(props.match.params.latlon.split(',')[0]).toFixed(6);
+        const lng = parseFloat(props.match.params.latlon.split(',')[1]).toFixed(6);
+
+        ev.preventDefault();
+        const group = {
+            groupName: groupName,
+            owner: {
+                name: name,
+                surname: surname,
+                age: age,
+                gender: gender
+            },
+            practices: practice,
+            ownLocation: location,
+            location: {
+                lat: parseFloat(lat),
+                lng: parseFloat(lng)
+            },
+            experience: experience,
+            participans: [email]
+        }
+
+        const workoutService = new WorkoutService();
+        workoutService.createGroup(group);
+
+        history.push(`/success/${group.groupName}`);
+    }
 
     return (
         <>
             <div id="formWrapper">
-                
-
-                
-
-                <form>
+                <form onSubmit={validateAndCreate}>
                     <legend>Stwórz swoja grupę i zaproś przyjaciół!!</legend>
+                    <div class="form-group">
+                        <label forHtml="formGroupExampleInput">Podaj nazwę grupy</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="formGroupExampleInput"
+                            value={groupName}
+                            onChange={e => setGroupName(e.target.value)}
+                            placeholder="Podaj nazwę swojej grupy" />
+                    </div>
+
 
                     <div class="form-group">
                         <label for="formGroupExampleInput">Podaj imię</label>
@@ -42,6 +85,17 @@ const Form = () => {
                             placeholder="Podaj swoje nazwisko"
                             onChange={e => setSurname(e.target.value)}
                         />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Podaj email</label>
+                        <input
+                            type="email"
+                            class="form-control"
+                            id="formGroupExampleInput"
+                            value={email}
+                            onChange={e => setEmail(e.target.value)}
+                            placeholder="Podaj swój email" />
                     </div>
 
                     <div class="form-group">
@@ -70,7 +124,7 @@ const Form = () => {
                         </select>
                     </div>
 
-                
+
                     {/* <select
                         value={gender}
                         onChange={e => setGender(e.target.value)}>
@@ -81,13 +135,12 @@ const Form = () => {
 
 
 
-                    <legend>What's practice is good for Your body and mind?</legend>
+                    <legend>What practice is good for Your body and mind?</legend>
 
-                    <div class="form-group">
+                    <div class="form-group radio-group">
                         <label for="formGroupExampleInput2">Joga</label>
                         <input
-                            type="radio"
-                            name="practice"
+                            type="checkbox"
                             class="form-control"
                             id="formGroupExampleInput2"
                             value="joga"
@@ -106,11 +159,10 @@ const Form = () => {
                     /> */}
 
 
-                    <div class="form-group">
+                    <div class="form-group radio-group">
                         <label for="formGroupExampleInput">Meditation</label>
                         <input
-                            type="radio"
-                            name="practice"
+                            type="checkbox"
                             class="form-control"
                             id="formGroupExampleInput"
                             value="meditation"
@@ -127,32 +179,21 @@ const Form = () => {
                         onChange={e => setPractice(e.target.value)}
                     /> */}
 
-                    <div class="form-group">
-                        <label for="formGroupExampleInput">All Body Workout</label>
+                    <div class="form-group radio-group">
+                        <label for="formGroupExampleInput">Workout</label>
                         <input
-                            type="radio"
-                            name="practice"
+                            type="checkbox"
                             class="form-control"
                             id="formGroupExampleInput"
-                            value="body workout"
-                            checked={practice === 'bodyWorkout'}
+                            value="Workout"
+                            checked={practice === 'Workout'}
                             onChange={e => setPractice(e.target.value)} />
                     </div>
 
-                    {/* <label>body workout</label>
-                    <input
-                        name="practice"
-                        type="radio"
-                        value="bodyWorkout"
-                        checked={practice === 'bodyWorkout'}
-                        onChange={e => setPractice(e.target.value)}
-                    /> */}
-
-                    <div class="form-group">
+                    <div class="form-group radio-group">
                         <label for="formGroupExampleInput">Running</label>
                         <input
-                            type="radio"
-                            name="practice"
+                            type="checkbox"
                             class="form-control"
                             id="formGroupExampleInput"
                             value="running"
@@ -160,38 +201,16 @@ const Form = () => {
                             onChange={e => setPractice(e.target.value)} />
                     </div>
 
-
-
-
-                    {/* <label>running</label>
-                    <input
-                        name="practice"
-                        type="radio"
-                        value="running"
-                        checked={practice === 'running'}
-                        onChange={e => setPractice(e.target.value)}
-                    />*/}
-
-                    <div class="form-group">
+                    <div class="form-group radio-group">
                         <label for="formGroupExampleInput">Cross Fit</label>
                         <input
-                            type="radio"
-                            name="practice"
+                            type="checkbox"
                             class="form-control"
                             id="formGroupExampleInput"
-                            value="cross fit"
+                            value="crossFit"
                             checked={practice === 'crossFit'}
                             onChange={e => setPractice(e.target.value)} />
                     </div>
-
-                    {/* <label>cross fit</label>
-                    <input
-                        name="practice"
-                        type="radio"
-                        value="crossFit"
-                        checked={practice === 'crossFit'}
-                        onChange={e => setPractice(e.target.value)}
-                    /> */}
 
                     <legend>What about the location? </legend>
 
@@ -206,14 +225,6 @@ const Form = () => {
                             <option value="false">Nie mam miejsca do ćwiczeć</option>
                         </select>
                     </div>
-
-                    {/* <select
-                        value={location}
-                        onChange={e => setLocation(e.target.value)}>
-                        <option value="true">Zapraszam do swojej przestrzeni</option>
-                        <option value="false">Nie mam miejsca do ćwiczeć</option>
-
-                    </select>*/}
 
                     <legend>What about experience? </legend>
 
@@ -232,28 +243,16 @@ const Form = () => {
                         </select>
                     </div>
 
-
-
-                    {/* <select
-                        value={experience}
-                        onChange={e => setExperience(e.target.value)}>
-                        <option value="practiced">I have a lot of experience in my practice</option>
-                        <option value="beginner">I am a beginner</option>
-                        <option value="teacher">I am a teacher</option>
-
-                    </select> */}
-
+                    <div className="form-group bottom-group">
+                        <button class="btn btn-success" >Create</button>
+                    </div>
 
 
                 </form>
-                </div>
+            </div>
 
-           
-
-           
         </>
     );
 };
 
 export default Form;
-

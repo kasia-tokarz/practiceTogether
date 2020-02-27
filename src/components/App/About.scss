@@ -1,0 +1,57 @@
+.headerTitleAbout {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 60px;
+
+    h2{
+        font-weight: 700;
+        color: rgb(92, 91, 88);
+
+    }
+    i{
+        font-size: 7x;
+        color: rgb(92, 91, 88);
+    }
+}
+
+
+
+.wrapperDivAbout {
+    margin: 0 auto;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    padding: 2rem;
+    margin-top: 30px;
+    min-height: 540px;
+    border-radius: 5px;
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.3);
+    display: flex;
+
+    #aboutDiv{
+        background-image: url("../icons/girl_rulezz-removebg-preview.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        min-width: 50%;
+        min-height: 150px;
+
+
+
+    }
+    .textDivAbout {
+        min-width: 50%;
+        min-height: 150px;
+
+        
+
+        
+        p{
+            font-size: 1.3rem;
+
+        }
+
+    }
+
+}
+
+

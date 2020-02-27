@@ -3,6 +3,7 @@
 
 body {
   font-family: 'Raleway', sans-serif;
+  overflow-x: hidden;
 }
 
 
@@ -37,8 +38,11 @@ body {
   background-color: #B6C6D1;
   height: 270px;
   width: 80vw;
-  border-radius: 7px;
+
   margin: 40px auto;
+  border-radius: 5px;
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.3);
+    
 
 
   #inputWrapper {
@@ -94,13 +98,16 @@ body {
   min-height: 300px;
   width: 80vw;
   background-color: #B6C6D1;
-  border-radius: 8px;
+ 
   margin: 0 auto;
   margin-top: 40px;
-  border-radius: 8px;
+  
   padding: 10px;
   display: flex;
   justify-content: space-around;
+  border-radius: 5px;
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.3);
+    
 
 
 
@@ -195,3 +202,4 @@ body {
   box-shadow: 0px 3px 6px #00000029;
 
 }
+

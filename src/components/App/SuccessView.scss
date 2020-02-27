@@ -1,0 +1,52 @@
+#imgWrapper {
+
+    min-height: 200px;
+    width: 80vw;
+    background-color: #B6C6D1;
+    border-radius: 8px;
+    margin: 0 auto;
+    margin-top: 40px;
+    border-radius: 8px;
+    padding: 10px;
+    padding-top: 30px;
+
+
+    #textWrapper {
+        margin: 0 auto;
+        text-align: center;
+
+        h2 {
+            display: block;
+            text-align: center;
+            color: palevioletred;
+            font-size: 2.5rem;
+            font-weight: 700;
+
+
+        }
+
+        h3 {
+            display: block;
+            color: rgb(92, 91, 88);
+            font-size: 2rem;
+            font-weight: 700;
+
+            text-align: center;
+        }
+
+
+
+    }
+
+
+    #imgDiv {
+        background-image: url("../icons/diverse-international-group-of-women-or-girl-hugging-together-union-vector-id1154639826-removebg-preview.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        min-width: 100px;
+        min-height: 400px;
+
+
+    }
+}
