@@ -1,6 +1,6 @@
 import React from 'react';
-import { HashRouter, Switch, Route, Link } from 'react-router-dom'
-import { scaleRotate as Menu } from 'react-burger-menu';
+import { HashRouter, Switch, Route, Link } from 'react-router-dom';
+
 //import logo from './logo.svg';
 import './App.scss';
 //import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,7 +8,7 @@ import MainWindow from './MainWindow';
 import MapWindow from './MapWindow';
 import Form from './Form';
 import MapWithList from './MapWithList';
-
+// import { scaleRotate as Menu } from 'react-burger-menu';
 import HamburgerMenu from './HamburgerMenu';
 import SuccessView from "./SuccessView";
 import HowItWorks from "./HowItWorks";
@@ -16,17 +16,10 @@ import About from './About';
 
 
 const App = () => {
-
-
+  
     return (
-        <>
-            <Menu right pageWrapId={"page-wrap"} outerContainerId={"outer-container"} >
-
-                <a href="/#/" className="bm-item" style={{ display: "block" }}><span>#home</span></a>
-                <a href="/#/howiworks" className="bm-item" style={{ display: "block" }}><span>#howItWorks</span></a>
-                <a href="/#/form" className="bm-item" style={{ display: "block" }}><span>#createGroup</span></a>
-                <a href="/#/about" className="bm-item" style={{ display: "block" }}><span>#aboutMe</span></a>
-            </Menu>
+        <><HashRouter>
+            <HamburgerMenu />
             <div id="outer-container">
                 <div id="header" display="flex">
                     <div id="logoWrapper">PracticeTogether
@@ -35,16 +28,16 @@ const App = () => {
 
                 </div>
                 <div id="page-wrap">
-                    <HashRouter>
+                    
                         <Switch>
                             <Route exact path='/' component={MainWindow} />
-                            <Route exact path='/map/:latlon' component={MapWithList} />
-                            <Route exact path='/form/:latlon' component={Form} />
-                            <Route exact path='/success/:group' component={SuccessView} />
-                            <Route exact path='/howiworks' component={HowItWorks} />
-                            <Route exact path='/about' component={About}/>
+                            <Route path='/map/:latlon' component={MapWithList} />
+                            <Route path='/form/:latlon' component={Form} />
+                            <Route path='/success/:group' component={SuccessView} />
+                            <Route path='/howiworks' component={HowItWorks} />
+                            <Route path='/about' component={About}/>
                         </Switch>
-                    </HashRouter>
+                    
                     <div id="photoDiv">
                         <div></div>
                     </div>
@@ -84,6 +77,7 @@ const App = () => {
                 </div>
 
             </div>
+            </HashRouter>
         </>
     );
 };

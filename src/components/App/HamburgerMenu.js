@@ -1,30 +1,28 @@
-import { scaleRotate as Menu } from 'react-burger-menu';
 import React from "react";
-import {Component} from "react";
+import { Component } from "react";
+import { Link } from 'react-router-dom';
+import { scaleRotate as Menu } from 'react-burger-menu';
 import "./HamburgerMenu.scss";
- 
-class HamburgerMenu extends Component {
-  showSettings (event) {
-    event.preventDefault();
-    const showSettings =()=> {
 
+
+
+class HamburgerMenu extends Component {
+    showSettings(event) {
+        event.preventDefault();
     }
-    showSettings();
-    
-  }
- 
-  render () {
-    // NOTE: You also need to provide styles, see https://github.com/negomi/react-burger-menu#styling
-    return (
-      <Menu right>
-         <a id="home" className="menu-item" href="/">Home</a>
-                        <a id="about" className="menu-item" href="/form">Create New Group</a>
-                        <a id="contact" className="menu-item" href="/user">User</a>
-                        <a id="contact" className="menu-item" href="/about">About</a>
-                        <a onClick={this.showSettings} className="menu-item--small" href="">About</a>
-      </Menu>
-    );
-  }
+
+    render() {
+        // NOTE: You also need to provide styles, see https://github.com/negomi/react-burger-menu#styling
+        return (
+            <Menu right pageWrapId={"page-wrap"} outerContainerId={"outer-container"} >
+                <Link to="/" className="bm-item" style={{ display: "block" }}><span>#home</span></Link>
+                <Link to="/howiworks" className="bm-item" style={{ display: "block" }}><span>#howItWorks</span></Link>
+                <Link to="/form" className="bm-item" style={{ display: "block" }}><span>#createGroup</span></Link>
+                <Link  to="/about" className="bm-item" style={{ display: "block" }}><span>#aboutMe</span></Link>
+
+            </Menu>
+        );
+    }
 }
 
 export default HamburgerMenu;
