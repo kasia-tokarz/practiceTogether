@@ -25,7 +25,7 @@ const Groups = () => {
                 </div>
                 <div id="textDiv" className="textDivAbout">
                     <div id="headerTitle" className="headerTitleAbout">
-                        <h2><i class="fas fa-hashtag"></i>myGroups</h2>
+                        <h2 id="textH"><i class="fas fa-hashtag"></i>myGroups</h2>
 
                     </div>
                     <table id="tablePrac" border="collapse">
