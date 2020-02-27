@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { WorkoutService } from './WorkoutService';
 
+import './Groups.scss';
+
 const Groups = () => {
     const [groups, setGroups] = useState([]);
 
@@ -26,19 +28,26 @@ const Groups = () => {
                         <h2><i class="fas fa-hashtag"></i>myGroups</h2>
 
                     </div>
-                    <table border="collapse">
+                    <table id="tablePrac" border="collapse">
+                        <thead>
+                            <th>#practice</th>
+                            <th>#groupName</th>
+                            <th>#owner</th>
+
+
+                        </thead>
                         <tbody>
                             {groups.map((group, i) => <tr key={i} className="singleGroup">
                                 <td>
-                                    Prcatice: {group.practices}
+                                    {group.practices}
 
                                 </td>
                                 <td>
-                                    Name: {group.groupName}
+                                    {group.groupName}
 
                                 </td>
                                 <td>
-                                    Owner: {group.owner.name}
+                                    {group.owner.name}
 
                                 </td>
 
