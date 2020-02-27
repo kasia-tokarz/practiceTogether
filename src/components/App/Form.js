@@ -24,6 +24,30 @@ const Form = (props) => {
         const lng = parseFloat(props.match.params.latlon.split(',')[1]).toFixed(6);
 
         ev.preventDefault();
+
+        const matchExact = (r, str) => {
+            var match = str.match(r);
+            return match && str === match[0];
+        }
+
+        let onlyLetters = matchExact(/[a-z]+/ig, name);
+        if (name.length < 2 || name.length > 60 || !onlyLetters) {
+            alert("Wrong name!!")
+            return null;
+
+        }
+        onlyLetters = matchExact(/[a-z]+/ig, surname);
+        if (surname.length < 2 || surname.length > 60 || !onlyLetters) {
+            alert("Wrong surname!!")
+            return null;
+
+        }
+
+        if (age < 18 || isNaN(+age)) {
+            alert("Wrong age!!")
+            return null;
+
+        }
         const group = {
             groupName: groupName,
             owner: {

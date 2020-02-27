@@ -19,6 +19,7 @@ class HamburgerMenu extends Component {
                 <Link to="/howiworks" className="bm-item" style={{ display: "block" }}><span>#howItWorks</span></Link>
                 <Link to="/form" className="bm-item" style={{ display: "block" }}><span>#createGroup</span></Link>
                 <Link  to="/about" className="bm-item" style={{ display: "block" }}><span>#aboutMe</span></Link>
+                <Link  to="/contact" className="bm-item" style={{ display: "block" }}><span>#contactUs</span></Link>
 
             </Menu>
         );

@@ -3,7 +3,8 @@ import "./About.scss";
 
 const About = () => {
     return (
-        <div>
+        <>
+  
             <div id="wrapperDiv" className="wrapperDivAbout">
 
                 <div id="aboutDiv" className="aboutDiv">
@@ -19,9 +20,10 @@ const About = () => {
 
 
             </div>
+            
 
 
-        </div>
+        </>
     );
 };
 

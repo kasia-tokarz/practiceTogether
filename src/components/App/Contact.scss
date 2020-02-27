@@ -1,0 +1,54 @@
+
+#wrapper {
+    #backgroundDiv {
+        margin: 0 auto;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    padding: 2rem;
+    margin-top: 30px;
+    min-height: 200px;
+    border-radius: 5px;
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.3);
+    display: flex;
+
+
+        #contactImg{
+
+            
+
+    
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        min-width: 50%;
+        min-height: 150px; 
+
+        }
+        #contactText {
+            min-width: 50%;
+        min-height: 150px;
+        h2{
+
+        }
+        p{
+            i{
+                margin-right: 1rem;
+
+            }
+        }
+
+        }
+    }
+}
+
+#communityImg {
+    min-height: 291px;
+    margin-top: -193px;
+    background-image: url("../icons/together-removebg-preview.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    min-width: 50%;
+    margin-bottom: 5rem;
+    
+}

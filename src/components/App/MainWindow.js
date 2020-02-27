@@ -67,7 +67,7 @@ const MainWindow = () => {
 
     return (
 
-        <div className="mainInput">
+         <div className="mainInput">
             <div id="inputWrapper">
                 <input
                     id="inputCode"
@@ -81,7 +81,7 @@ const MainWindow = () => {
                 <button id="detect" onClick={handleClick}>Szukaj!!!</button>
             </div>
 
-        </div>
+        </div> 
 
     );
 };
