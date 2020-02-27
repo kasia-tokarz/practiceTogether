@@ -7,10 +7,11 @@ export class WorkoutService {
         const groupObject = {
             groupName: formData.groupName,
             owner: {
-                name: formData.name,
-                surname: formData.surname,
-                age: formData.age,
-                gender: formData.gender
+                name: formData.owner.name,
+                surname: formData.owner.surname,
+                age: formData.owner.age,
+                gender: formData.owner.gender,
+                email: formData.owner.email
             },
             practices: formData.practices,
             ownLocation: formData.ownLocation,

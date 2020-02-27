@@ -14,6 +14,8 @@ import SuccessView from "./SuccessView";
 import HowItWorks from "./HowItWorks";
 import About from './About';
 import Contact from './Contact';
+import ImageBox from './ImageBox';
+import Groups from './Groups'
 
 
 const App = () => {
@@ -23,67 +25,46 @@ const App = () => {
             <HamburgerMenu />
             <div id="outer-container">
                 <div id="header" display="flex">
-                <Link to="/" ><div id="logoWrapper">PracticeTogether
+                    <Link to="/" ><div id="logoWrapper">PracticeTogether
                     <div></div>
                     </div></Link>
 
                 </div>
-                    <div id="page-wrap">
+                <div id="page-wrap">
 
-                        <Switch>
-                            <Route exact path='/' component={MainWindow} />
-                            <Route path='/map/:latlon' component={MapWithList} />
-                            <Route path='/form/:latlon' component={Form} />
-                            <Route path='/success/:group' component={SuccessView} />
-                            <Route path='/howiworks' component={HowItWorks} />
-                            <Route path='/about' component={About} />
-                            <Route path='/contact' component={Contact} />
-                        </Switch>
+                    <Switch>
+                        <Route exact path='/' component={MainWindow} />
+                        <Route path='/map/:latlon' component={MapWithList} />
+                        <Route path='/form/:latlon' component={Form} />
+                        <Route path='/success/:group' component={SuccessView} />
+                        <Route path='/howiworks' component={HowItWorks} />
+                        <Route path='/about' component={About} />
+                        <Route path='/groups' component={Groups} />
+                        
+                        <Route path='/contact' component={Contact} />
+                    </Switch>
 
-                        <div id="photoDiv">
-                            <div></div>
-                        </div>
-
-                        <div id="aboutUs">
-                            <div id="aboutWrapper">
-                                <div className="aboutDiv" id="aboutDivFirst">
-                                    <div id="first"></div>
-                                    <p className="hashTekst">#makeYourCommunity </p>
-
-                                </div>
-                                <div className="aboutDiv">
-                                    <div id="second"></div>
-                                    <p className="hashTekst">#respectYourBody</p>
-
-                                </div>
-                                <div className="aboutDiv">
-                                    <div id="third"></div>
-                                    <p className="hashTekst">#takeCareAboutYourTime</p>
-
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div>
-
-
+                
+                
                 </div>
 
-                <div id="footer">
-                    <div id="leftSide">
-                        <p id="footerText">© all rights reserved. Privacy policy & cookies. created by Kasia Tokarz</p>
-                    </div>
-                    <div id="socialMedia">
-                        <i className="fab fa-instagram"></i>
-                        <i className="fab fa-facebook-f"></i>
-                        <i className="fab fa-twitter"></i>
-                    </div>
 
+            </div>
+
+            <div id="footer">
+                <div id="leftSide">
+                    <p id="footerText">© all rights reserved. Privacy policy & cookies. created by Kasia Tokarz</p>
                 </div>
-            </HashRouter>
+                <div id="socialMedia">
+                    <i className="fab fa-instagram"></i>
+                    <i className="fab fa-facebook-f"></i>
+                    <i className="fab fa-twitter"></i>
+                </div>
+
+            </div>
+        </HashRouter>
         </>
-            );
-        };
-        
-        export default App;
+    );
+};
+
+export default App;

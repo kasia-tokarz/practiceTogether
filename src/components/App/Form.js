@@ -54,7 +54,8 @@ const Form = (props) => {
                 name: name,
                 surname: surname,
                 age: age,
-                gender: gender
+                gender: gender,
+                email: email
             },
             practices: practice,
             ownLocation: location,

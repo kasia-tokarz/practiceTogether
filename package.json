@@ -1,7 +1,9 @@
 {
-  "name": "practise",
-  "version": "0.1.0",
+  "name": "practice-together",
+  "version": "1.0.0",
   "private": true,
+  "author": "Kasia Tokarz",
+  "license": "MIT",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.1",

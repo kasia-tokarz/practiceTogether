@@ -17,7 +17,7 @@ class HamburgerMenu extends Component {
             <Menu right pageWrapId={"page-wrap"} outerContainerId={"outer-container"} >
                 <Link to="/" className="bm-item" style={{ display: "block" }}><span>#home</span></Link>
                 <Link to="/howiworks" className="bm-item" style={{ display: "block" }}><span>#howItWorks</span></Link>
-                <Link to="/form" className="bm-item" style={{ display: "block" }}><span>#createGroup</span></Link>
+                <Link to="/groups" className="bm-item" style={{ display: "block" }}><span>#showGroups</span></Link>
                 <Link  to="/about" className="bm-item" style={{ display: "block" }}><span>#aboutMe</span></Link>
                 <Link  to="/contact" className="bm-item" style={{ display: "block" }}><span>#contactUs</span></Link>
 

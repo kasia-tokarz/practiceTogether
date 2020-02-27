@@ -27,7 +27,7 @@ const MapWithList = (props) => {
         }
 
         const groups = new WorkoutService().getAllGroupes();
-        if(groups) {
+        if (groups) {
 
             setGroups(groups);
         }
@@ -35,7 +35,7 @@ const MapWithList = (props) => {
     }, [])
 
     const createNewGroupForm = () => {
-        
+
         history.push(`/form/${latLng.lat},${latLng.lng}`);
     }
 
@@ -46,7 +46,17 @@ const MapWithList = (props) => {
             </div>
             <div className="listWrapper">
                 <h2>Grupy w Twojej okolicy</h2>
-                {groups.map((group, i) => <li id="liId" key={i}><i id="location" className="fas fa-map-marker-alt"></i>{group.groupName}<i id="add" className="fas fa-user-plus"></i></li>)}
+                {groups.map((group, i) => <li className="liId" key={i}>
+                    #groupName: {group.groupName},
+                    <br />
+                    #onwer: {group.owner.name},
+                    <br />
+                    #practice: {group.practices}
+                    <a href={`mailto:${group.owner.email}?subject=${group.groupName}&body=ChceDolaczycDoWasLaski`} target="_app">
+
+                        <i className="add fas fa-user-plus" />
+                    </a>
+                </li>)}
 
                 <button className="btn create" onClick={createNewGroupForm}>Create new group</button>
             </div>

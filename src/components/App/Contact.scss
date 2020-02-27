@@ -13,10 +13,7 @@
 
 
         #contactImg{
-
-            
-
-    
+            background-image: url("../icons/contact-removebg-preview.png");
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
@@ -27,6 +24,7 @@
         #contactText {
             min-width: 50%;
         min-height: 150px;
+        padding-top: 1rem;
         h2{
 
         }

@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import Geocode from "react-geocode";
+import ImageBox from './ImageBox';
 
 
 
@@ -66,6 +67,7 @@ const MainWindow = () => {
 
 
     return (
+        <>
 
          <div className="mainInput">
             <div id="inputWrapper">
@@ -82,6 +84,11 @@ const MainWindow = () => {
             </div>
 
         </div> 
+        <ImageBox/> 
+
+      
+        
+                    </>
 
     );
 };
