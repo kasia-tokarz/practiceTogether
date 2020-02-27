@@ -54,7 +54,7 @@ const MainWindow = () => {
                 history.push(`map/${lat},${lng}`);
             },
             error => {
-                console.error(error);
+                alert('Nieprawidłowy adres!');
             }
         );
 

@@ -31,13 +31,13 @@ const Form = (props) => {
         }
 
         let onlyLetters = matchExact(/[a-z]+/ig, name);
-        if (name.length < 2 || name.length > 60 || !onlyLetters) {
+        if (name.length < 2 ) {
             alert("Wrong name!!")
             return null;
 
         }
         onlyLetters = matchExact(/[a-z]+/ig, surname);
-        if (surname.length < 2 || surname.length > 60 || !onlyLetters) {
+        if (surname.length < 2 ) {
             alert("Wrong surname!!")
             return null;
 
