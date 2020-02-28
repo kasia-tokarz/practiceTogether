@@ -20,7 +20,7 @@ const Groups = () => {
 
             <div id="wrapperDiv" className="wrapperDivAbout">
 
-                <div id="aboutDiv" className="aboutDiv">
+                <div id="grupsPhoto" className="aboutDiv">
 
                 </div>
                 <div id="textDiv" className="textDivAbout">

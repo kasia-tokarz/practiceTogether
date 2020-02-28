@@ -13,27 +13,7 @@ const MainWindow = () => {
 
     const history = useHistory();
     const handleClick = () => {
-        // let geo = navigator.geolocation;
-        // let lat = "";
-        // let lon = "";
-
-        // if (geo) {
-
-
-        //     const options = {
-        //         enableHighAccuracy: true
-        //     }
-        //     geo.getCurrentPosition(function (location) {
-        //         lat= location.coords.latitude;
-        //         lon= location.coords.longitude;
-
-        //         history.push(`map/${lat},${lon}`);
-        //     }, null, options);
-        // }
-        // else {
-        //     console.log('niedostępny');
-        // }
-
+       
         // set Google Maps Geocoding API for purposes of quota management. Its optional but recommended.
         Geocode.setApiKey("AIzaSyDxhPoHdmvEiL-X4oikMKwW7J0MDALNZbQ");
 
