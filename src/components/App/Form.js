@@ -78,7 +78,7 @@ const Form = (props) => {
             <div id="formWrapper">
                 <form onSubmit={validateAndCreate}>
                     <legend>Stwórz swoja grupę i zaproś przyjaciół!!</legend>
-                    <div class="form-group">
+                    <div className="form-group">
                         <label forHtml="formGroupExampleInput">Podaj nazwę grupy</label>
                         <input
                             type="text"
@@ -90,7 +90,7 @@ const Form = (props) => {
                     </div>
 
 
-                    <div class="form-group">
+                    <div className="form-group">
                         <label for="formGroupExampleInput">Podaj imię</label>
                         <input
                             type="text"
@@ -100,7 +100,7 @@ const Form = (props) => {
                             onChange={e => setName(e.target.value)}
                             placeholder="Podaj swoje imię" />
                     </div>
-                    <div class="form-group">
+                    <div className="form-group">
                         <label for="formGroupExampleInput2">Podaj swoje nazwisko</label>
                         <input
                             type="text"
@@ -112,7 +112,7 @@ const Form = (props) => {
                         />
                     </div>
 
-                    <div class="form-group">
+                    <div className="form-group">
                         <label for="formGroupExampleInput">Podaj email</label>
                         <input
                             type="email"
@@ -123,7 +123,7 @@ const Form = (props) => {
                             placeholder="Podaj swój email" />
                     </div>
 
-                    <div class="form-group">
+                    <div className="form-group">
                         <label for="formGroupExampleInput2">Podaj swój wiek</label>
                         <input
                             type="text"
@@ -135,14 +135,14 @@ const Form = (props) => {
                         />
                     </div>
 
-                    <div class="form-group">
+                    <div className="form-group">
                         <label for="formGroupExampleInput2">Gender</label>
                         <select
                             class="form-control"
                             id="formGroupExampleInput2"
                             value={gender}
                             onChange={e => setGender(e.target.value)}>
-                            <option value="Famale">Famale</option>
+                            <option value="Female">Female</option>
                             <option value="Male">Male</option>
                             <option value="unknown">I don't wanna say</option>
 
@@ -162,7 +162,7 @@ const Form = (props) => {
 
                     <legend>What practice is good for Your body and mind?</legend>
 
-                    <div class="form-group radio-group">
+                    <div className="form-group radio-group">
                         <label for="formGroupExampleInput2">Joga</label>
                         <input
                             type="checkbox"
@@ -184,7 +184,7 @@ const Form = (props) => {
                     /> */}
 
 
-                    <div class="form-group radio-group">
+                    <div className="form-group radio-group">
                         <label for="formGroupExampleInput">Meditation</label>
                         <input
                             type="checkbox"
@@ -204,7 +204,7 @@ const Form = (props) => {
                         onChange={e => setPractice(e.target.value)}
                     /> */}
 
-                    <div class="form-group radio-group">
+                    <div className="form-group radio-group">
                         <label for="formGroupExampleInput">Workout</label>
                         <input
                             type="checkbox"
@@ -215,7 +215,7 @@ const Form = (props) => {
                             onChange={e => setPractice(e.target.value)} />
                     </div>
 
-                    <div class="form-group radio-group">
+                    <div className="form-group radio-group">
                         <label for="formGroupExampleInput">Running</label>
                         <input
                             type="checkbox"
@@ -226,7 +226,7 @@ const Form = (props) => {
                             onChange={e => setPractice(e.target.value)} />
                     </div>
 
-                    <div class="form-group radio-group">
+                    <div className="form-group radio-group">
                         <label for="formGroupExampleInput">Cross Fit</label>
                         <input
                             type="checkbox"
@@ -239,7 +239,7 @@ const Form = (props) => {
 
                     <legend>What about the location? </legend>
 
-                    <div class="form-group">
+                    <div className="form-group">
                         <label for="formGroupExampleInput2">Location</label>
                         <select
                             class="form-control"
@@ -254,7 +254,7 @@ const Form = (props) => {
                     <legend>What about experience? </legend>
 
 
-                    <div class="form-group">
+                    <div className="form-group">
                         <label for="formGroupExampleInput2">My Experience</label>
                         <select
                             class="form-control"
